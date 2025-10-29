@@ -1,0 +1,44 @@
+{
+  "context" : {
+    "items": [
+      {
+        "path": "specs/goal.md",
+        "from": {
+          "github": {
+            "path": "https://github.com/opensdd/recipes/global/agents_md/resources/goal.md"
+          }
+        }
+      }
+    ]
+  },
+  "ide": {
+    "commands": {
+      "items": [
+        {
+          "name": "agents_md_plan",
+          "from": {
+            "github": {
+              "path": "https://github.com/opensdd/recipes/global/agents_md/resources/plan.md"
+            }
+          }
+        },
+        {
+          "name": "agents_md",
+          "from": {
+            "github": {
+              "path": "https://github.com/opensdd/recipes/global/agents_md/resources/agents_md.md"
+            }
+          }
+        },
+        {
+          "name": "agents_md_generate",
+          "from": {
+            "github": {
+              "path": "https://github.com/opensdd/recipes/global/agents_md/resources/generate.md"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

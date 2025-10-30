@@ -6,7 +6,7 @@
   },
   "recipe": {
     "context": {
-      "items": [
+      "entries": [
         {
           "path": "specs/goal.md",
           "from": {
@@ -19,7 +19,7 @@
     },
     "ide": {
       "commands": {
-        "items": [
+        "entries": [
           {
             "name": "agents_md_plan",
             "from": {

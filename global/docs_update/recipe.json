@@ -1,0 +1,82 @@
+{
+  "entryPoint": {
+    "start": {
+      "command": "docs_update_run"
+    }
+  },
+  "recipe": {
+    "context": {
+      "entries": [
+        {
+          "path": "specs/docs_update/parameters.md",
+          "from": {
+            "github": {
+              "path": "https://github.com/opensdd/recipes/global/agents_md/resources/goal.md"
+            }
+          }
+        },
+        {
+          "path": "specs/docs_update/parameters.md",
+          "from": {
+            "userInput": {
+              "entries": [
+                {
+                  "name": "Documentation Repository",
+                  "description": "Repository where documentation resides"
+                },
+                {
+                  "name": "Repositories to Analyze",
+                  "description": "Repositories that should be analyzed for changes to perform documentation updates",
+                  "optional": true
+                },
+                {
+                  "name": "User Message",
+                  "description": "User instructions that must be followed during documentation updates. Free form text, may point to specific area to focus, time interval to analyze or anything else",
+                  "optional": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ide": {
+      "commands": {
+        "entries": [
+          {
+            "name": "docs_update_checkout",
+            "from": {
+              "github": {
+                "path": "https://github.com/opensdd/recipes/global/docs_update/resources/checkout.md"
+              }
+            }
+          },
+          {
+            "name": "docs_update_plan",
+            "from": {
+              "github": {
+                "path": "https://github.com/opensdd/recipes/global/docs_update/resources/plan.md"
+              }
+            }
+          },
+          {
+            "name": "docs_update_rewrite",
+            "from": {
+              "github": {
+                "path": "https://github.com/opensdd/recipes/global/docs_update/resources/rewrite.md"
+              }
+            }
+          },
+          {
+            "name": "docs_update_run",
+            "from": {
+              "github": {
+                "path": "https://github.com/opensdd/recipes/global/docs_update/resources/run.md"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

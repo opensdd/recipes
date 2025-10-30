@@ -1,4 +1,9 @@
 {
+  "entryPoint": {
+    "start": {
+      "command": "agents_md"
+    }
+  },
   "recipe": {
     "context": {
       "items": [

@@ -2,19 +2,18 @@
   "entryPoint": {
     "start": {
       "command": "docs_update_run"
+    },
+    "workspace": {
+      "enabled": true,
+      "path": "osdd/workspace/docs_update",
+      "unique": {
+        "len": 5
+      }
     }
   },
   "recipe": {
     "context": {
       "entries": [
-        {
-          "path": "specs/docs_update/parameters.md",
-          "from": {
-            "github": {
-              "path": "https://github.com/opensdd/recipes/global/agents_md/resources/goal.md"
-            }
-          }
-        },
         {
           "path": "specs/docs_update/parameters.md",
           "from": {

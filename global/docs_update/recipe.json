@@ -41,6 +41,11 @@
       ]
     },
     "ide": {
+      "permissions": {
+        "allow": [{
+          "bash": "git clone:*"
+        }]
+      },
       "commands": {
         "entries": [
           {

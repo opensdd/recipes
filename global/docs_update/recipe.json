@@ -42,10 +42,14 @@
     },
     "ide": {
       "permissions": {
-        "allow": [{
-          "bash": "git clone:*",
-          "network": true
-        }]
+        "allow": [
+          {
+            "bash": "git clone:*"
+          },
+          {
+            "network": true
+          }
+        ]
       },
       "commands": {
         "entries": [

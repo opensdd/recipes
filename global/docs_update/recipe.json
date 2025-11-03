@@ -31,7 +31,8 @@
                 {
                   "name": "User Message",
                   "description": "User instructions that must be followed during documentation updates. Free form text, may point to specific area to focus, time interval to analyze or anything else",
-                  "optional": true
+                  "optional": true,
+                  "text": {}
                 }
               ]
             }

@@ -43,7 +43,8 @@
     "ide": {
       "permissions": {
         "allow": [{
-          "bash": "git clone:*"
+          "bash": "git clone:*",
+          "network": true
         }]
       },
       "commands": {

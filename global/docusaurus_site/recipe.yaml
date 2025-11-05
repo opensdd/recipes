@@ -1,0 +1,59 @@
+entryPoint:
+  start:
+    command: docusaurus_run
+  workspace:
+    enabled: true
+    path: osdd/workspace/docusaurus_site
+    unique:
+      len: 5
+recipe:
+  context:
+    entries:
+      - path: specs/docusaurus_site/parameters.md
+        from:
+          userInput:
+            entries:
+              - name: Site Name
+                description: Display title for the Docusaurus site (site will be created in the root of the GitHub Pages repository)
+              - name: GitHub Pages Repository
+                description: Full GitHub repository path (org/repo) that will host the site on GitHub Pages
+              - name: Context
+                description: "Free-form context: paste GitHub repositories, local file/folder paths, and remote URLs to include. One per line or any readable format; the agent will parse and collect into repos/ and context/."
+                optional: true
+                text: {}
+              - name: User Message
+                description: Optional additional instructions for site generation and documentation creation
+                optional: true
+                text: {}
+      - path: specs/docusaurus_site/deploy-site.yml
+        from:
+          github:
+            path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/deploy-site.yml"
+  ide:
+    permissions:
+      allow:
+        - bash: "git clone:*"
+        - bash: "npx create-docusaurus@latest*"
+        - network: true
+    commands:
+      entries:
+        - name: docusaurus_prepare
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/prepare.md"
+        - name: docusaurus_collect
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/collect.md"
+        - name: docusaurus_plan
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/plan.md"
+        - name: docusaurus_generate
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/generate.md"
+        - name: docusaurus_run
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/docusaurus_site/resources/run.md"

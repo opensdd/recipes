@@ -8,7 +8,7 @@ Purpose: Create a Docusaurus site skeleton that future steps will populate with 
 ## STRICT RULES
 - MUST read `specs/docusaurus_site/parameters.md` to get the Site Name and GitHub Pages Repository (required)
 - MUST clone the GitHub Pages Repository into the workspace if not present
-- MUST run `npx --cache ./.npm-cache create-docusaurus@latest . classic` inside the cloned repository root (do NOT create a subfolder for the site)
+- MUST run `npx --cache ./.npm-cache create-docusaurus@latest site classic` inside the cloned repository root
 - MUST be idempotent: if the repository already contains a valid Docusaurus project, verify and continue without recreating
 - MUST create `repos/` and `context/` folders at the workspace root if they don't exist
 - MUST copy `specs/docusaurus_site/deploy-site.yml` to `<siteDir>/.github/workflows/deploy-site.yml`
@@ -26,7 +26,7 @@ Purpose: Create a Docusaurus site skeleton that future steps will populate with 
 3. If `siteDir` does not exist, clone the repository into `siteDir`.
 4. Inside `siteDir`:
    - If it already contains a valid Docusaurus project (has `docusaurus.config.js` or `docusaurus.config.ts` and `package.json`), verify and continue.
-   - Otherwise, execute: `npx --cache ./.npm-cache create-docusaurus@latest . classic` (create the site in the repository root; do NOT create a subfolder).
+   - Otherwise, execute: `npx --cache ./.npm-cache create-docusaurus@latest site classic`
 5. Ensure directories `repos/` and `context/` exist at the workspace root.
 6. Install GitHub Actions workflow: copy `specs/docusaurus_site/deploy-site.yml` to `<siteDir>/.github/workflows/deploy-site.yml` (create directories as needed).
 

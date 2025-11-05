@@ -23,15 +23,15 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: cd site && npm ci
 
       - name: Build Docusaurus site
-        run: npm run build
+        run: cd site && npm run build
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build
+          publish_dir: site/build
           publish_branch: gh-pages
           force_orphan: true

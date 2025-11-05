@@ -33,7 +33,7 @@ Purpose: Implement the site generation specified in the plan created by docusaur
    - `siteDir = <repoDir>/web` (the Docusaurus site lives in the `web/` subfolder)
    - `docsDir = <siteDir>/docs`
 2. Generate Docs per Plan
-   - For each proposed page in the plan, create or overwrite corresponding markdown files under `docs/`
+   - For each proposed page in the plan, create or overwrite corresponding markdown files under `web/docs/`
    - Extract or summarize content from `./context/` and `./repos/` as indicated by the plan
    - Ensure front-matter titles and slugs are set for navigation
 3. Sidebars
@@ -67,15 +67,15 @@ Loading plan...
 ✓ Loaded plan from specs/docusaurus_site/plan.md
 
 Generating documentation...
-✓ Created docs/intro.md
-✓ Created docs/getting-started.md
-✓ Created docs/api/users.md
-✓ Updated sidebars.js
+✓ Created web/docs/intro.md
+✓ Created web/docs/getting-started.md
+✓ Created web/docs/api/users.md
+✓ Updated web/sidebars.js
 
 Configuring GitHub Pages...
 ✓ Set organizationName=org, projectName=repo
 ✓ Updated url and baseUrl
-✓ Added npm script: deploy
+✓ Ensured npm script: build
 
 Summary:
 ✓ Generated 7 documentation pages

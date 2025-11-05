@@ -40,7 +40,7 @@ Purpose: Create a Docusaurus site skeleton that future steps will populate with 
 ```
 Initializing Docusaurus site...
 ✓ Cloned repo into ./<repo>
-✓ Initialized Docusaurus in ./<repo>
+✓ Initialized Docusaurus in ./<repo>/web
 ✓ Created ./repos and ./context folders
 ✓ Installed workflow at ./<repo>/.github/workflows/deploy-site.yml
 ```

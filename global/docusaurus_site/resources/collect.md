@@ -32,8 +32,10 @@ Purpose: Prepare content for documentation generation by gathering all specified
    - For each file path, validate existence then copy into `./context/`
 3. Copy Local Folders
    - For each folder path, validate existence then copy recursively into `./context/`
-4. Download Remote URLs
+4. Download Remote URLs`
    - Create `./context/urls/`
+   - Use `https://r.jina.ai/<URL>` to get content of the URL. That will take care of rendering javascript/dynamic sites,
+     e.g. `https://r.jina.ai/https://www.test.com/path`.
    - For each URL, download to a deterministic filename, e.g., `<index>_<slug>.txt` or original filename if present
 5. Verification & Summary
    - Confirm presence of collected artifacts

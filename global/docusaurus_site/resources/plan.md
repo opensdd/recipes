@@ -28,7 +28,7 @@ Never modify site files. This command only prepares the execution plan.
    - Extract topics, APIs, and artifacts suitable for docs
 2. Define Site Information Architecture
    - Propose sidebar structure (categories and pages)
-   - Identify pages to generate under `docs/` and potential landing content under `src/pages/`
+   - Identify pages to generate under `web/docs/` and potential landing content under `web/src/pages/`
    - Note required assets (images, diagrams) if any
 3. Map Inputs to Outputs
    - For each input source, define which docs/pages should reference or incorporate it
@@ -66,23 +66,23 @@ Collected inputs from 3 repositories, 5 local files, and 2 remote URLs. Goal: bu
   - FAQ
 
 ### Proposed Pages
-- docs/intro.md — project overview
-- docs/getting-started.md — installation and quickstart
-- docs/guides/configuration.md — configuration reference
-- docs/api/users.md — API endpoints and schemas
-- docs/tutorials/first-steps.md — walkthrough tutorial
+- web/docs/intro.md — project overview
+- web/docs/getting-started.md — installation and quickstart
+- web/docs/guides/configuration.md — configuration reference
+- web/docs/api/users.md — API endpoints and schemas
+- web/docs/tutorials/first-steps.md — walkthrough tutorial
 
 ### Source Mapping
-- repos/api-repo → docs/api/*.md (extracted from OpenAPI/specs)
-- context/readme.md → docs/intro.md
-- context/urls/guide.html → docs/guides/links.md (summarized links)
+- repos/api-repo → web/docs/api/*.md (extracted from OpenAPI/specs)
+- context/readme.md → web/docs/intro.md
+- context/urls/guide.html → web/docs/guides/links.md (summarized links)
 
 ### Deployment
 - organizationName: org
 - projectName: repo
 - url: https://org.github.io
 - baseUrl: /repo/
-- Add npm script: "deploy": "docusaurus deploy"
+- Ensure npm script exists: "build": "docusaurus build" (publishing is handled by the provided GitHub Actions workflow from `web/` build output)
 
 ```
 

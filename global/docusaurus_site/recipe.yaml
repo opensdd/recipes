@@ -14,7 +14,7 @@ recipe:
           userInput:
             entries:
               - name: Site Name
-                description: Display title for the Docusaurus site (site will be created in the root of the GitHub Pages repository)
+                description: Display title for the Docusaurus site (site will be created in the web subfolder of the GitHub Pages repository)
               - name: GitHub Pages Repository
                 description: Full GitHub repository path (org/repo) that will host the site on GitHub Pages
               - name: Context

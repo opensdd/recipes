@@ -5,7 +5,7 @@ This recipe scaffolds and fills a Docusaurus documentation website that is hoste
 ## What it does
 - Prepare
   - Clones your pre-created GitHub repository that will host the site.
-  - Initializes a Docusaurus project in the ROOT of that repository (no subfolder).
+  - Initializes a Docusaurus project in the `web/` subfolder of that repository.
   - Creates workspace folders: `repos/` and `context/`.
   - Installs a GitHub Actions workflow at `.github/workflows/deploy-site.yml` to publish the built site to the `gh-pages` branch.
 - Collect
@@ -17,7 +17,7 @@ This recipe scaffolds and fills a Docusaurus documentation website that is hoste
   - Analyzes collected materials and drafts an information architecture and page plan.
   - Saves the plan to `specs/docusaurus_site/plan.md`.
 - Generate
-  - Creates/updates markdown pages under `<repo>/docs/` per the plan.
+  - Creates/updates markdown pages under `<repo>/web/docs/` per the plan.
   - Updates sidebars and Docusaurus configuration for your GitHub Pages repo.
   - Ensures the GitHub Actions workflow is present at `<repo>/.github/workflows/deploy-site.yml`.
 
@@ -28,7 +28,7 @@ This recipe scaffolds and fills a Docusaurus documentation website that is hoste
 - Network access for cloning and fetching remote resources.
 
 ## Inputs
-- Site Name: Display title for the site (used in Docusaurus metadata; no subfolder is created).
+- Site Name: Display title for the site (used in Docusaurus metadata; the site is scaffolded under `web/`).
 - GitHub Pages Repository (required): The `org/repo` that will host the site. Must already exist.
 - Context (optional): Free-form text containing GitHub repos, local file/folder paths, and remote URLs (one per line or any readable format). The agent parses and collects them.
 - User Message (optional): Additional guidance for planning/generation.
@@ -39,10 +39,10 @@ This recipe scaffolds and fills a Docusaurus documentation website that is hoste
 - After the run, commit and push the repository changes to your default branch (e.g., `main`). Pushing triggers the GitHub Action to publish the site to `gh-pages`.
 
 ## Outputs
-- A Docusaurus site in the ROOT of your docs repository (`docusaurus.config.*`, `package.json`, `docs/`, `src/`, `static/`, etc.).
-- Generated documentation pages under `<repo>/docs/` per the plan.
-- Updated `sidebars` configuration for navigation.
-- GitHub Actions workflow installed at `<repo>/.github/workflows/deploy-site.yml` that builds and deploys to `gh-pages`.
+- A Docusaurus site in the `web/` subfolder of your repository (`web/docusaurus.config.*`, `web/package.json`, `web/docs/`, `web/src/`, `web/static/`, etc.).
+- Generated documentation pages under `<repo>/web/docs/` per the plan.
+- Updated `web/sidebars` configuration for navigation.
+- GitHub Actions workflow installed at `<repo>/.github/workflows/deploy-site.yml` that builds and deploys `web/` to `gh-pages`.
 - Planning artifact at `specs/docusaurus_site/plan.md` in the workspace.
 
 ## Notes

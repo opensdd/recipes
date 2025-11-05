@@ -19,7 +19,7 @@ Never modify site files. This command only prepares the execution plan.
    - Optional User Message with additional instructions
 2. Inspect workspace folders `./context/` and `./repos/` to understand available materials.
 3. If a previous plan exists at `specs/docusaurus_site/plan.md`, load it for continuity.
-4. Assume the Docusaurus site will live in the ROOT of the GitHub Pages repository (no subfolder).
+4. Assume the Docusaurus site will live in the web subfolder of the GitHub Pages repository.
 
 ## High-Level Workflow
 1. Analyze Collected Inputs

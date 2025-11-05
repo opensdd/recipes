@@ -8,7 +8,7 @@ Purpose: Create a Docusaurus site skeleton that future steps will populate with 
 ## STRICT RULES
 - MUST read `specs/docusaurus_site/parameters.md` to get the Site Name and GitHub Pages Repository (required)
 - MUST clone the GitHub Pages Repository into the workspace if not present
-- MUST run `npx --cache ./.npm-cache create-docusaurus@latest site classic` inside the cloned repository root
+- MUST run `npx --cache ./.npm-cache create-docusaurus@latest web classic -t` inside the cloned repository root
 - MUST be idempotent: if the repository already contains a valid Docusaurus project, verify and continue without recreating
 - MUST create `repos/` and `context/` folders at the workspace root if they don't exist
 - MUST copy `specs/docusaurus_site/deploy-site.yml` to `<siteDir>/.github/workflows/deploy-site.yml`
@@ -25,16 +25,16 @@ Purpose: Create a Docusaurus site skeleton that future steps will populate with 
 2. Compute `siteDir = <workspace>/<repo>` and `repoUrl = https://github.com/<org>/<repo>.git` (or use the provided URL/SSH form).
 3. If `siteDir` does not exist, clone the repository into `siteDir`.
 4. Inside `siteDir`:
-   - If it already contains a valid Docusaurus project (has `docusaurus.config.js` or `docusaurus.config.ts` and `package.json`), verify and continue.
-   - Otherwise, execute: `npx --cache ./.npm-cache create-docusaurus@latest site classic`
+   - If it already contains a valid Docusaurus project (has `web/docusaurus.config.js` or `web/docusaurus.config.ts` and `web/package.json`), verify and continue.
+   - Otherwise, execute: `npx --cache ./.npm-cache create-docusaurus@latest web classic -t`
 5. Ensure directories `repos/` and `context/` exist at the workspace root.
 6. Install GitHub Actions workflow: copy `specs/docusaurus_site/deploy-site.yml` to `<siteDir>/.github/workflows/deploy-site.yml` (create directories as needed).
 
 ## Verification
-- Confirm that `<workspace>/<repo>/package.json` exists.
-- Confirm presence of Docusaurus config file in `<workspace>/<repo>/`.
+- Confirm that `<workspace>/<repo>/web/package.json` exists.
+- Confirm presence of Docusaurus config file in `<workspace>/<repo>/web/`.
 - Confirm `repos/` and `context/` directories are present at workspace root.
-- Confirm workflow exists at `<workspace>/<repo>/.github/workflows/deploy-site.yml`. 
+- Confirm workflow exists at `<workspace>/<repo>/.github/workflows/deploy-site.yml`.
 
 ## Example Output
 ```

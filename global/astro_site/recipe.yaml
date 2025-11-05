@@ -1,0 +1,60 @@
+entryPoint:
+  start:
+    command: astro_run
+  workspace:
+    enabled: true
+    path: osdd/workspace/astro_site
+    unique:
+      len: 5
+recipe:
+  context:
+    entries:
+      - path: specs/astro_site/parameters.md
+        from:
+          userInput:
+            entries:
+              - name: Site Name
+                description: Display title for the Astro Starlight site (site will be created in the web subfolder of the GitHub Pages repository)
+              - name: GitHub Pages Repository
+                description: Full GitHub repository path (org/repo) that will host the site on GitHub Pages
+              - name: Context
+                description: "Free-form context: paste GitHub repositories, local file/folder paths, and remote URLs to include. One per line or any readable format; the agent will parse and collect into repos/ and context/."
+                optional: true
+                text: {}
+              - name: User Message
+                description: Optional additional instructions for site generation and documentation creation
+                optional: true
+                text: {}
+      - path: specs/astro_site/deploy-site.yml
+        from:
+          github:
+            path: "https://github.com/opensdd/recipes/global/astro_site/resources/deploy-site.yml"
+  ide:
+    permissions:
+      allow:
+        - bash: "git clone:*"
+        - bash: "npm create astro@latest*"
+        - bash: "npm --cache ./.npm-cache create astro@latest*"
+        - network: true
+    commands:
+      entries:
+        - name: astro_prepare
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/astro_site/resources/prepare.md"
+        - name: astro_collect
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/astro_site/resources/collect.md"
+        - name: astro_plan
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/astro_site/resources/plan.md"
+        - name: astro_generate
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/astro_site/resources/generate.md"
+        - name: astro_run
+          from:
+            github:
+              path: "https://github.com/opensdd/recipes/global/astro_site/resources/run.md"
